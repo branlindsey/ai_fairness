@@ -14,8 +14,8 @@ def roc_curve_(probabilities, labels):
     Return the True Positive Rates, False Positive Rates and Thresholds for the
     ROC curve.
     '''
-    sorted = np.sort(probabilities)
-    threshold = list(sorted)
+    sorted_ = np.sort(probabilities)
+    threshold = list(sorted_)
     true_pos = labels.sum()
     true_neg =  len(labels)-true_pos
     
