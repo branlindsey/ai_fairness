@@ -16,3 +16,8 @@ Fairness Metrics
 - Theil Index
 - Disparate Impact 
 - 
+
+
+Resources:
+https://aif360.mybluemix.net/
+http://www.datasciencepublicpolicy.org/projects/aequitas/
