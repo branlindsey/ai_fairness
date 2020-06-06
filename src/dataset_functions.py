@@ -2,7 +2,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-%matplotlib inline
+
 
 #AIF360 Dataset Classes 
 from aif360.datasets import StandardDataset
@@ -82,5 +82,7 @@ def get_dataset_metrics_list(binary_dataset_list):
                             unprivileged_groups=unprivileged_groups, 
                             privileged_groups=privileged_groups)
         mean_diff_list.append(metrics.mean_difference())
-        disp_imp_list.append(metrics.disparate_impact())
-        return mean_diff_list, disp_imp_list
+        disp_imp_list.append(1 - metrics.disparate_impact())
+    return mean_diff_list, disp_imp_list
+
+
