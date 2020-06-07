@@ -52,7 +52,7 @@ def create_multiple_datasets(dataset_creator, salary_thresh_list):
     return binary_dataset_list
 
 
-def get_dataset_metrics(binary_dataset_list):
+def show_metrics(binary_dataset_list):
     #Set privileged and unprivileged groups
     privileged_groups= [{'sex':1}]
     unprivileged_groups= [{'sex': 0}]

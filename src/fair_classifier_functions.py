@@ -2,18 +2,6 @@ from aif360.metrics import BinaryLabelDatasetMetric, ClassificationMetric
 from aif360.metrics import ClassificationMetric
 
 
-def fit_models(estimator, train_list):
-    fit_list = []
-    for train_ in train_list:
-        X_train = train_.features
-        y_train = train_.labels.ravel()
-        
-        model = estimator
-        model.fit(X_train, y_train)
-        fit_list.append(model)
-    return fit_list
-
-
 def create_split_lists(dataset_list):
     #Create Train, Validation, Test Sets
     data_train_list =[]
@@ -27,6 +15,33 @@ def create_split_lists(dataset_list):
         data_val_list.append(data_val) 
         data_test_list.append(data_test) 
     return data_train_list, data_val_list, data_test_list 
+
+def fit_models(estimator, train_list):
+    fit_list = []
+    for train_ in train_list:
+        X_train = train_.features
+        y_train = train_.labels.ravel()
+        
+        model = estimator
+        model.fit(X_train, y_train)
+        fit_list.append(model)
+    return fit_list
+
+def get_predictions(estimator, train_list, test_list):
+    pred_list = []
+    for train_, test_ in zip(train_list, test_list):
+        X_train = train_.features
+        y_train = train_.labels.ravel()
+        X_test = test_.features  
+        model = estimator
+        model.fit(X_train, y_train)
+        y_pred = model.predict(X_test)
+        preds = test_.copy()
+        preds.labels = y_pred.ravel()
+        pred_list.append(preds)
+    return pred_list
+
+
     
 
 def show_classifier_metrics(test_list, prediction_list):
