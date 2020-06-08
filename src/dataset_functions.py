@@ -86,3 +86,19 @@ def get_dataset_metrics_list(binary_dataset_list):
     return mean_diff_list, disp_imp_list
 
 
+def get_bias_amplification(train_data, prediction_data):
+    privileged_groups= [{'sex':1}]
+    unprivileged_groups= [{'sex': 0}]
+    train_metrics = BinaryLabelDatasetMetric(train_data, 
+                            unprivileged_groups=unprivileged_groups, 
+                            privileged_groups=privileged_groups)
+    
+    prediction_metrics = BinaryLabelDatasetMetric(prediction_data, 
+                            unprivileged_groups=unprivileged_groups, 
+                            privileged_groups=privileged_groups)
+    
+    
+    tedf = train_metrics.smoothed_empirical_differential_fairness()
+    pedf = prediction_metrics.smoothed_empirical_differential_fairness()
+    bias_amp = pedf - tedf
+    return bias_amp

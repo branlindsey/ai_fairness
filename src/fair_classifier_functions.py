@@ -41,6 +41,21 @@ def get_predictions(estimator, train_list, test_list):
         pred_list.append(preds)
     return pred_list
 
+def get_rw_predictions(estimator, train_list, test_list):
+    pred_list = []
+    for train_, test_ in zip(train_list, test_list):
+        X_train = train_.features
+        y_train = train_.labels.ravel()
+        X_test = test_.features  
+        model = estimator
+        model.fit(X_train, y_train, sample_weight=train_.instance_weights)
+        y_pred = model.predict(X_test)
+        preds = test_.copy()
+        preds.labels = y_pred.ravel()
+        pred_list.append(preds)
+    return pred_list
+
+
 
     
 
