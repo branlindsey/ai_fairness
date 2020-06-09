@@ -104,3 +104,16 @@ def get_classifier_metrics(test_list, prediction_list):
         recall_diff_list.append(model_metric.equal_opportunity_difference().round(3))
         precision_diff_list.append((model_metric.precision(privileged=False)- model_metric.precision(privileged=True)).round(3))  
     return acc_list, bal_acc_list, avg_odds_list, recall_diff_list, precision_diff_list
+
+
+def get_confusion_matrix(test_list, prediction_list):
+    privileged_groups= [{'sex':1}]
+    unprivileged_groups= [{'sex': 0}]
+   
+    model_metric = ClassificationMetric(test_list, prediction_list, 
+                        unprivileged_groups=unprivileged_groups, 
+                        privileged_groups=privileged_groups)
+    
+    priv_conf_mat = model_metric.binary_confusion_matrix(privileged=True)
+    unpriv_conf_mat = model_metric.binary_confusion_matrix(privileged=False)
+    return priv_conf_mat, unpriv_conf_mat
