@@ -4,7 +4,6 @@ from aif360.datasets.lime_encoder import LimeEncoder
 import pickle
 
 def get_lime_model(train, test):
-    lime_list = []
     lime_data = LimeEncoder().fit(train)
 
     s_train = lime_data.transform(train.features)
@@ -16,10 +15,7 @@ def get_lime_model(train, test):
         categorical_features=lime_data.s_categorical_features, 
         categorical_names=lime_data.s_categorical_names, 
         kernel_width=3, verbose=False, discretize_continuous=True)
-    lime_list.append(lime_data)
-    lime_list.append(s_test)
-    lime_list.append(explainer)
-    return lime_list
+    return lime_data, s_test, explainer
 
 
 

@@ -41,7 +41,10 @@ def create_binary_dataset_salary(salary):
                               features_to_drop=['boss_id'])
 
     df_data = std_data.convert_to_dataframe()
-    binary_dataset = BinaryLabelDataset(favorable_label=1, unfavorable_label=0, df=df_data[0], label_names=['salary'],
+    binary_dataset = BinaryLabelDataset(favorable_label=1, 
+                                        unfavorable_label=0, 
+                                        df=df_data[0], 
+                                        label_names=['salary'],
                   protected_attribute_names=['sex'])
     
     return binary_dataset

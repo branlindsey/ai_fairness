@@ -46,6 +46,17 @@ def confusion_matrix_to_df(confusion_matrix):
                       index=['Predicted True', 'Predicted False'])
     return df                                                       
 
+def confusion_matrix_to_df_from_dict(confusion_matrix):
+    matrix = np.zeros([2,2])
+    conf_list = list(confusion_matrix.values())
+    matrix[0,0] = conf_list[0].round()
+    matrix[0,1] = conf_list[1].round()
+    matrix[1,0] = conf_list[3].round()
+    matrix[1,1] = conf_list[2].round()
+    
+    df = pd.DataFrame(matrix, columns=['Actual True', 'Actual False'], 
+                      index=['Predicted True', 'Predicted False'])
+    return df                
 
 def scorecard(y_true, y_pred):
     print(f'The Accuracy score is {accuracy_score(y_true, y_pred):2.3f}.\n')

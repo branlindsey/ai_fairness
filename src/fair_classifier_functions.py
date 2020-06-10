@@ -41,7 +41,10 @@ def get_predictions(estimator, train_list, test_list):
         pred_list.append(preds)
     return pred_list
 
+
+
 def get_rw_predictions(estimator, rw_train_list, rw_test_list):
+    """Multiple Predictions"""
     rw_pred_list = []
     for train_, test_ in zip(rw_train_list, rw_test_list):
         X_train = train_.features
@@ -55,7 +58,17 @@ def get_rw_predictions(estimator, rw_train_list, rw_test_list):
         rw_pred_list.append(preds)
     return rw_pred_list
 
-
+def get_rw_prediction(estimator, train, test):
+    """Single Prediction"""
+    X_train = train.features
+    y_train = train.labels.ravel()
+    X_test = test.features  
+    model = estimator
+    model.fit(X_train, y_train, sample_weight=train.instance_weights)
+    y_pred = model.predict(X_test)
+    preds = test.copy()
+    preds.labels = y_pred.ravel()
+    return preds
 
     
 
@@ -116,4 +129,6 @@ def get_confusion_matrix(test_list, prediction_list):
     
     priv_conf_mat = model_metric.binary_confusion_matrix(privileged=True)
     unpriv_conf_mat = model_metric.binary_confusion_matrix(privileged=False)
+    print('Confusion Matrix for Men {}'.format(priv_conf_mat))
+    print('Confusion Matrix for Women {}'.format(unpriv_conf_mat))
     return priv_conf_mat, unpriv_conf_mat
