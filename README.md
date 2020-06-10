@@ -26,3 +26,4 @@ https://fairlearn.github.io/
 Further Reading 
 https://hbr.org/2016/12/a-guide-to-solving-social-problems-with-machine-learning
 https://blog.insightdatascience.com/tackling-discrimination-in-machine-learning-5c95fde95e95
+https://towardsdatascience.com/artificial-intelligence-fairness-and-tradeoffs-ce11ac284b63
