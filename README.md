@@ -66,7 +66,7 @@ I decided to try a variety of fairness algorithms to mitigate the bias in the da
 - Postprocessing
   - Calibrated Equalized Odds - Adjust the predictions within a confidence interval in order to reduce bias.   
 
-
+![model_table-1](https://github.com/branlindsey/ai_fairness/blob/master/images/Screen%20Shot%202020-06-11%20at%201.00.15%20PM.png)
 ![model_val metrics](https://github.com/branlindsey/ai_fairness/blob/master/images/model_150_metrics_v3.png)
 
 
@@ -78,13 +78,13 @@ In the final testing set, the Reweighing and Prejudice Remoer algorithms continu
 ![model_test_metrics](https://github.com/branlindsey/ai_fairness/blob/master/images/model_150_metrics_test.png)
 
 ### Conclusion 
-Overall the algorithms did not have a large impact on decreasing the bias amplification from the original Random Forest.   The departmental salary gap within the Company would need to be accounted for.  
+Overall the algorithms did not have a large impact on decreasing the bias amplification from the original Random Forest.   The dataset metrics were still useful for understanding the differences between who receives the benefit of a higher salary within the Company. 
 
 
 ### Resources:
-https://aif360.mybluemix.net/
-http://www.datasciencepublicpolicy.org/projects/aequitas/
-https://fairlearn.github.io/
+https://aif360.mybluemix.net
+http://www.datasciencepublicpolicy.org/projects/aequitas
+https://fairlearn.github.io
 
 ### Further Reading 
 https://hbr.org/2016/12/a-guide-to-solving-social-problems-with-machine-learning
