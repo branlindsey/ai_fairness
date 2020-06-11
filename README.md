@@ -6,23 +6,23 @@ Stories of machine learning algorithms are in the news; hiring algorithms with m
 If the data used to make the decisions has bias,the machine learning algorithm will perpetuate this bias under the guise of impartiality. This provides cover for the human decision maker by passing the blame on the computer. Companies and governments who use these algorithms face a huge liability if their algorithms can be proved to be discriminatory to protected classes. 
 
 
-
-
-
-
 ### AI Fairness 360 Toolkit 
 This project explores and applies metrics and algorithms from the AI Fairness 360
 toolkit developed by IBM Trusted AI to mitigate bias in machine learning.  It is specificall designed to work with binary classification.   The user also specifies which features in the data are considered protected attributes and within the protected attributes which groups are privileged or unprivileged.  
 
-![Code snippet](https://github.com/branlindsey/ai_fairness/blob/master/images/Screen%20Shot%202020-06-09%20at%209.16.12%20PM.png)
+<details >
+  <summary>
+    Setting Up a Dataset
+  </summary>
+<img src='https://github.com/branlindsey/ai_fairness/blob/master/images/Screen%20Shot%202020-06-09%20at%209.16.12%20PM.png'>
+</details>
 
 -Fairness Metrics
 - Mean Difference - The mean difference is the difference in the rate of receiving the benefit by privileged or unprivileged group.  
 - Disparate Impact - The disparate impact is the ratio who receives the benefit in the privileged and unprivileged groups.  We would like these to be as close to zero as possible.  I used 1 - Disparate Impact because it allowed both metrics to converge to 0 as bias was mitigated.  
 
 - Fairness Algorithms Used 
-
-- Preprocessing 
+-- Preprocessing 
 -- Reweighing
 - Inprocessing
 -- Adversarial Debiasing
@@ -35,17 +35,28 @@ toolkit developed by IBM Trusted AI to mitigate bias in machine learning.  It is
 At around \$100,000, there is clear drop of the amount of women at the company while the quantity of men stays relatively fixed.   
 ![salary_image](https://github.com/branlindsey/ai_fairness/blob/master/images/salaries_edited.png)
 
+
+
 ## Will machine learning amplify the bias that already exists in the data? 
 One of the major concerns with bias in machine learning is that an algorithms can actaully amplify the bias already present in the data. 
 In order to choose a salary threshold, I looked at the dataset metrics and classifier metrics at different thresholds. 
 
-![Dataset Metrics at Different Salary Thresholds](
+![Dataset Metrics at Different Salary Thresholds](https://github.com/branlindsey/ai_fairness/blob/master/images/model_metrics.png)
 
-![Classifier Metrics at Different Salary Thresholds]
+![Classifier Metrics at Different Salary Thresholds](https://github.com/branlindsey/ai_fairness/blob/master/images/salary_thresholds_classifier_metrics.png)
 
  I also looked at the salary quartiles in the company to get a sense of the salaries across departments. It was around \$150,000 for the 25% of the company.  I decided to use this salary as the threshold for testing the bias removal algoritms.   
 
 #### Initial Random Forest Classifier with Gender Removed 
+Original Training Mean Difference -0.144 and 1-Disparate Impact 0.217 
+
+Original Validation Mean Difference -0.173 and 1-Disparate Impact 0.256 
+|.           |  Mean Difference  | 1- Disparate Impact   |
+|-----------:|:-----------|:-----------|
+|Training Set|    .144    |   .217    |
+|Test Set.   |    .173    |   .256     |
+|RF Predictions|   .236    |  .256     |
+
 
 ## What algorithms 
 
