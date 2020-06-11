@@ -17,11 +17,14 @@ toolkit developed by IBM Trusted AI to mitigate bias in machine learning.  It is
 <img src='https://github.com/branlindsey/ai_fairness/blob/master/images/Screen%20Shot%202020-06-09%20at%209.16.12%20PM.png'>
 </details>
 
--Fairness Metrics
+* Fairness Metrics *
 - Mean Difference - The mean difference is the difference in the rate of receiving the benefit by privileged or unprivileged group.  
 - Disparate Impact - The disparate impact is the ratio who receives the benefit in the privileged and unprivileged groups.  We would like these to be as close to zero as possible.  I used 1 - Disparate Impact because it allowed both metrics to converge to 0 as bias was mitigated.  
 
-- Fairness Algorithms Used 
+- Balanced Accuracy -  The balanced accuracy adjusts accuracy for unbalanced classifiers by taking the average of the rate of true positives and true negatives. 
+
+
+* Fairness Algorithms Used * 
 -- Preprocessing 
 -- Reweighing
 - Inprocessing
