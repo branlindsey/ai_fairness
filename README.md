@@ -68,13 +68,11 @@ In order to see whether removing gender would lower the bias in the dataset, I r
 I decided to try a variety of fairness algorithms to mitigate the bias in the dataset.  
 **Fairness Algorithms Used** 
 - Preprocessing 
-  -  Reweighing - 
+  -  Reweighing - Reweighing adds weights to the training data reduce bias.  
 - Inprocessing
-  - Adversarial Debiasing 
-  - Prejudice Remover 
+  - Adversarial Debiasing and Prejudice Remover reduce by equalizing the accuracy score between privileged and unpriviliged. 
 - Postprocessing
--   Calibrated Equalized Odds 
-
+-   Calibrated Equalized Odds - Adjust the predictions within a confidence interval in order to reduce bias.   
 
 ![model_metrics](https://github.com/branlindsey/ai_fairness/blob/master/images/model_150_metrics.png)
 
