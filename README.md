@@ -27,16 +27,6 @@ toolkit](https://aif360.mybluemix.net/#) developed by IBM Trusted AI to mitigate
 
 - Average Odds Difference - The average odds difference is th average of difference in FPR and TPR for unprivileged and privileged groups. 
 
-**Fairness Algorithms Used** 
-- Preprocessing 
-  -  Reweighing - 
-- Inprocessing
-  - Adversarial Debiasing 
-  - Prejudice Remover 
-- Postprocessing
--   Calibrated Equalized Odds 
-
-
 ## Does bias exist in the data from Company X? 
 Overall there are 2 men for every women at Company X.   At around \$100,000, there is clear drop of the amount of women at the company while the quantity of men stays relatively fixed.   
 ![salary_image](https://github.com/branlindsey/ai_fairness/blob/master/images/salaries_edited.png)
@@ -78,7 +68,9 @@ I decided to try a variety of fairness algorithms to mitigate the bias in the da
 
 ![model_metrics](https://github.com/branlindsey/ai_fairness/blob/master/images/model_150_metrics.png)
 
-I reduced bias by 33% in the final Reweighed Random Forest model while only losing 1% of accuracy to the original model. 
+The fairness algorithms were unable to reduce the bias in validation testing set.  I chose Reweighing, Adverarial Debiasing, and Prejudice Remover Algorithms on the testing set to  determine if this would continue to be the case. 
+
+
 
 ### Resources:
 https://aif360.mybluemix.net/
