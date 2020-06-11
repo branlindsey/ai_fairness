@@ -66,10 +66,19 @@ I decided to try a variety of fairness algorithms to mitigate the bias in the da
 - Postprocessing
 -   Calibrated Equalized Odds - Adjust the predictions within a confidence interval in order to reduce bias.   
 
-![model_metrics](https://github.com/branlindsey/ai_fairness/blob/master/images/model_150_metrics.png)
+
+![model_val metrics](https://github.com/branlindsey/ai_fairness/blob/master/images/model_150_metrics_v3.png)
+
 
 The fairness algorithms were unable to reduce the bias in validation testing set.  I chose Reweighing, Adverarial Debiasing, and Prejudice Remover Algorithms on the testing set to  determine if this would continue to be the case. 
 
+In the final testing set, the Reweighing and Prejudice Remoer algorithms continued to amplify bias, wheres the adversarial debiasing pushed the bias far into the other direction.  
+
+![model table](https://github.com/branlindsey/ai_fairness/blob/master/images/Screen%20Shot%202020-06-11%20at%2012.53.02%20PM.png)
+![model_test_metrics](https://github.com/branlindsey/ai_fairness/blob/master/images/model_150_metrics_test.png)
+
+### Conclusion 
+Overall the algorithms did not have a large impact on decreasing the bias amplification from the original Random Forest.   The departmental salary gap within the Company would need to be accounted for.  
 
 
 ### Resources:
