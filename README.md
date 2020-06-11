@@ -37,11 +37,13 @@ At around \$100,000, there is clear drop of the amount of women at the company w
 
 ## Will machine learning amplify the bias that already exists in the data? 
 One of the major concerns with bias in machine learning is that an algorithms can actaully amplify the bias already present in the data. 
-In order to choose a salary threshold, I looked at the 
+In order to choose a salary threshold, I looked at the dataset metrics and classifier metrics at different thresholds. 
 
-![Dataset Metrics at Different Salary Thresholds]
+![Dataset Metrics at Different Salary Thresholds](
 
 ![Classifier Metrics at Different Salary Thresholds]
+
+ I also looked at the salary quartiles in the company to get a sense of the salaries across departments. It was around \$150,000 for the 25% of the company.  I decided to use this salary as the threshold for testing the bias removal algoritms.   
 
 #### Initial Random Forest Classifier with Gender Removed 
 
