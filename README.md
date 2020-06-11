@@ -1,6 +1,5 @@
+# Don't Blame the Machine 
 
-
-# ai_fairness
 Stories of machine learning algorithms are in the news; hiring algorithms with male bias, recidivism risk predictors biasing against people of color,image detectors not recognizing darker skinned faces. Increasingly companies, governments,and individuals are moving to machine learning algorithms to lower the decision making burden.   
 
 If the data used to make the decisions has bias,the machine learning algorithm will perpetuate this bias under the guise of impartiality. This provides cover for the human decision maker by passing the blame on the computer. Companies and governments who use these algorithms face a huge liability if their algorithms can be proved to be discriminatory to protected classes. 
@@ -68,13 +67,11 @@ In order to see whether removing gender would lower the bias in the dataset, I r
 I decided to try a variety of fairness algorithms to mitigate the bias in the dataset.  
 **Fairness Algorithms Used** 
 - Preprocessing 
-  -  Reweighing - 
+  -  Reweighing - Reweighing adds weights to the training data reduce bias.  
 - Inprocessing
-  - Adversarial Debiasing 
-  - Prejudice Remover 
+  - Adversarial Debiasing and Prejudice Remover reduce by equalizing the accuracy score between privileged and unpriviliged. 
 - Postprocessing
--   Calibrated Equalized Odds 
-
+-   Calibrated Equalized Odds - Adjust the predictions within a confidence interval in order to reduce bias.   
 
 ![model_metrics](https://github.com/branlindsey/ai_fairness/blob/master/images/model_150_metrics.png)
 
