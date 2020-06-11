@@ -50,9 +50,9 @@ In order to choose a salary threshold, I looked at the dataset metrics and class
 In order to see whether removing gender would lower the bias in the dataset, I ran a Random Forest classifier and tested results.  The Random Forest with gender removed amplified the the bias in relation to mean difference. 
 |.           |  Mean Difference  | 1- Disparate Impact   |
 |-----------:|:-----------|:-----------|
-|Training Set|    .144    |   .217    |
-|Test Set.   |    .173    |   .256     |
-|RF Predictions|   .236    |  .256     |
+|Training Set|    .15    |   .24    |
+|Test Set.   |    -.16   |   .24     |
+|RF Predictions|   -.19    |  .21    |
 
 
 
@@ -67,7 +67,7 @@ I decided to try a variety of fairness algorithms to mitigate the bias in the da
 -   Calibrated Equalized Odds - Adjust the predictions within a confidence interval in order to reduce bias.   
 
 
-![model_val metrics](https://github.com/branlindsey/ai_fairness/blob/master/images/model_150_metrics_v3.png)
+![model_val metrics](https://github.com/branlindsey/ai_fairness/blob/master/images/model_150_metrics_v2.png)
 
 
 The fairness algorithms were unable to reduce the bias in validation testing set.  I chose Reweighing, Adverarial Debiasing, and Prejudice Remover Algorithms on the testing set to  determine if this would continue to be the case. 
