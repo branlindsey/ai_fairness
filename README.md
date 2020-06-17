@@ -31,7 +31,7 @@ toolkit](https://aif360.mybluemix.net/#) developed by IBM Trusted AI to mitigate
 Overall there are 2 men for every women at Company X.   At around \$100,000, there is clear drop of the amount of women at the company while the quantity of men stays relatively fixed.   
 ![salary_image](https://github.com/branlindsey/ai_fairness/blob/master/images/salaries_edited.png)
 
-With further inspection of the data, the HR department is the only department where women outnumber by 2 to 1, and this department also has lowest salary range in the company.  Additionally, women supervise fewere staffpeople than men, even in the HR department.  So gender is encoded in the data whether gender is explicity named or not in the data.  
+With further inspection of the data, the HR department is the only department where women outnumber by 2 to 1, and this department also has lowest salary range in the company.  Additionally, women supervise fewer staffpeople than men, even in the HR department.  So gender is encoded in the data whether or not gender is explicity named or not in the data.  
 
 [Tableau Dashboard Exploring Salary, Gender and Total Reports](https://public.tableau.com/views/GenderHiddenintheData/Dashboard1?:display_count=y&:origin=viz_share_link)
 
