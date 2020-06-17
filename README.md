@@ -70,7 +70,7 @@ I decided to try a variety of fairness algorithms to mitigate the bias in the da
 ![model_val metrics](https://github.com/branlindsey/ai_fairness/blob/master/images/model_150_metrics_v3.png)
 
 
-The fairness algorithms were unable to reduce the bias in validation testing set.  I chose Reweighing, Adverarial Debiasing, and Prejudice Remover Algorithms on the testing set to  determine if this would continue to be the case. 
+The fairness algorithms were unable to reduce the bias in validation testing set.  The postprocessing alogrithms, increased prediction accuracy to 100%, but did not reduce the bias. I chose Reweighing, Adverarial Debiasing, and Prejudice Remover Algorithms on the final testing set to  determine if this would continue to be the case. 
 
 In the final testing set, the Reweighing and Prejudice Remoer algorithms continued to amplify bias, wheres the adversarial debiasing pushed the bias far into the other direction.  
 
