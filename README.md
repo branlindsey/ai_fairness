@@ -78,7 +78,7 @@ In the final testing set, the Reweighing and Prejudice Remoer algorithms continu
 ![model_test_metrics](https://github.com/branlindsey/ai_fairness/blob/master/images/model_150_metrics_test.png)
 
 ### Conclusion 
-Overall the algorithms did not have a large impact on decreasing the bias amplification from the original Random Forest. The dataset metrics were still useful for understanding the differences between who receives the benefit of a higher salary within the Company. 
+Overall the algorithms did not have a large impact on decreasing the bias amplification from the original Random Forest. The dataset metrics of diparate impact and mean difference were still useful for understanding the differences between who receives the benefit of a higher salary within the Company. 
 
 
 ### Resources:
